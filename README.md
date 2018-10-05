@@ -8,8 +8,12 @@ $ [sudo] pip install itunes
 ```
 
 ### Examples
+`vlc.tell(applescript)` - execute applescript `tell application "VLC" ...`
 ```python
-import itunes
+>>> itunes.tell('play')
+```
+
+```python
 >>> itunes.play()
 >>> itunes.pause()
 >>> itunes.stop()
