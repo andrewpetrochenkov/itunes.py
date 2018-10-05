@@ -4,3 +4,4 @@ import itunes
 import tests_os.mac
 
 itunes.unmute()
+print("muted: %s" % itunes.muted())

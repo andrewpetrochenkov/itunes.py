@@ -1,70 +1,72 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import os
 from public import public
-import runcmd
+from itunes.helper import tell
+import itunes.playlists
+import itunes.tracks
+import itunes.volume
 
-
-def _run(args):
-    return runcmd.run(["itunes"] + list(args))._raise().out
 
 @public
 def kill():
-    _run(["kill"])
+    _pid = pid()
+    if _pid:
+        os.popen("kill %s" % _pid)
+
+
+@public
+def quit():
+    tell("quit")
+
 
 @public
 def pid():
-    out = _run(["pid"])._raise().out
-    if out:
-        return int(out)
+    for l in os.popen("ps -ax").read().splitlines():
+        if "/Applications/iTunes.app" in l and "iTunesHelper" not in l:
+            return int(list(filter(None, l.split(" ")))[0])
+
 
 @public
 def pause():
-    _run(["pause"])
+    tell("pause")
+
 
 @public
 def play():
-    _run(["play"])
-
-@public
-def play_track(track,playlist):
-    _run(["play-track",str(track),playlist])
-
-@public
-def stop():
-    _run(["stop"])
-
-@public
-def next():
-    _run(["next"])
-
-@public
-def prev():
-    _run(["prev"])
-
-@public
-def playlists():
-    out = _run(["playlists"])
-    return out.splitlines()
-
-
-@public
-def volume(value=None):
-    args = ["volume"]
-    if value:
-        args.append(str(value))
-    out = _run(args)
-    if out:
-        return int(out)
+    tell("play")
 
 
 @public
 def mute():
-    _run(["mute"])
+    tell("set mute to true")
 
-@public
-def unmute():
-    _run(["unmute"])
 
 @public
 def muted():
-    return "true" in _run(["muted"])
+    return "true" in tell("get mute")
+
+
+@public
+def unmute():
+    tell("set mute to false")
+
+
+@public
+def stop():
+    tell("stop")
+
+
+@public
+def next():
+    tell("play next track")
+
+
+@public
+def prev():
+    tell("play previous track")
+
+
+@public
+def state():
+    return tell("state")

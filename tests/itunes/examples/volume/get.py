@@ -3,5 +3,4 @@
 import itunes
 import tests_os.mac
 
-playlists = itunes.playlists()
-print(playlists)
+print("volume: %s" % itunes.volume.get())

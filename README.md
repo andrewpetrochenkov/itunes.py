@@ -19,26 +19,36 @@ import itunes
 
 playlists
 ```python
->>> itunes.playlists()
+>>> itunes.playlists.names()
 ["playlist1","playlist2"]
+
+>>> itunes.playlists.play("playlist1")
 ```
 
 play_track
 ```python
->>> itunes.play_track("track_name","playlist")
->>> itunes.play_track(1,"playlist")
+>>> itunes.tracks.play("track_name","playlist")
 ```
 
 volume
 ```python
->>> itunes.volume(10)
->>> itunes.volume()
+>>> itunes.volume.change(10)
+>>> itunes.volume.get()
 10
 ```
+
 mute
 ```python
 >>> itunes.mute()
 >>> itunes.muted()
 True
 >>> itunes.unmute()
+```
+
+
+process
+```python
+>>> itunes.pid()
+7654
+>>> itunes.kill()
 ```
