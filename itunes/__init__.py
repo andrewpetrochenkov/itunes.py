@@ -1,72 +1,53 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
-from public import public
+import public
 from itunes.helper import tell
+from itunes.process import activate, kill, pid, quit
 import itunes.playlists
 import itunes.tracks
 import itunes.volume
 
 
-@public
-def kill():
-    _pid = pid()
-    if _pid:
-        os.popen("kill %s" % _pid)
-
-
-@public
-def quit():
-    tell("quit")
-
-
-@public
-def pid():
-    for l in os.popen("ps -ax").read().splitlines():
-        if "/Applications/iTunes.app" in l and "iTunesHelper" not in l:
-            return int(list(filter(None, l.split(" ")))[0])
-
-
-@public
+@public.add
 def pause():
     tell("pause")
 
 
-@public
+@public.add
 def play():
     tell("play")
 
 
-@public
+@public.add
 def mute():
     tell("set mute to true")
 
 
-@public
+@public.add
 def muted():
-    return "true" in tell("get mute")
+    return "true" in tell("get mute").out
 
 
-@public
+@public.add
 def unmute():
     tell("set mute to false")
 
 
-@public
+@public.add
 def stop():
     tell("stop")
 
 
-@public
+@public.add
 def next():
     tell("play next track")
 
 
-@public
+@public.add
 def prev():
     tell("play previous track")
 
 
-@public
+@public.add
 def state():
     return tell("state")

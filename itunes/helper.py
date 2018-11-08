@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from public import public
+import public
 import applescript
 
 
-@public
+@public.add
 def tell(code):
-    return applescript.tell.app("iTunes", code)._raise().out
+    return applescript.tell.app("iTunes", code)

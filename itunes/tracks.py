@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-from public import public
+import public
 import itunes
 
 
-@public
+@public.add
 def play(track, playlist):
     itunes.tell('play track "%s" of playlist "%s"' % (track, playlist))

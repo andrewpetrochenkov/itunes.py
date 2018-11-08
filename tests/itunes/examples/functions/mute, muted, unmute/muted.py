@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import itunes
-import tests_os.mac
+import mac_only
 
-pid = itunes.pid()
-print(pid)
+print("muted: %s" % itunes.muted())
