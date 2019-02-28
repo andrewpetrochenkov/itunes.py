@@ -6,7 +6,7 @@ import itunes
 @public.add
 def get():
     if itunes.pid():
-        return int(itunes.tell('sound volume'))
+        return int(itunes.tell('sound volume').out)
 
 
 @public.add
