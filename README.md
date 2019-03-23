@@ -1,8 +1,13 @@
+<!--
+https://pypi.org/project/readme-generator/
+-->
+
+[![](https://img.shields.io/badge/OS-MacOS-blue.svg?longCache=True)]()
 [![](https://img.shields.io/pypi/pyversions/itunes.svg?longCache=True)](https://pypi.org/project/itunes/)
 [![](https://img.shields.io/pypi/v/itunes.svg?maxAge=3600)](https://pypi.org/project/itunes/)
 [![Travis](https://api.travis-ci.org/looking-for-a-job/itunes.py.svg?branch=master)](https://travis-ci.org/looking-for-a-job/itunes.py/)
 
-#### Install
+#### Installation
 ```bash
 $ [sudo] pip install itunes
 ```
@@ -10,35 +15,25 @@ $ [sudo] pip install itunes
 #### Functions
 function|`__doc__`
 -|-
-`itunes.activate()`|open iTunes and make it frontmost
-`itunes.frontmost()`|return True if `iTunes.app` is frontmost app, else False
-`itunes.kill()`|
-`itunes.mute()`|mute iTunes
-`itunes.muted()`|return True if iTunes muted, else False
-`itunes.next()`|play next track
-`itunes.pause()`|pause iTunes
-`itunes.pid()`|return iTunes.app pid
-`itunes.play()`|
-`itunes.playing()`|return True if iTunes is playing, else False
-`itunes.prev()`|play previous track
-`itunes.quit()`|Quit iTunes
-`itunes.state()`|return player state string
-`itunes.stop()`|stop
-`itunes.tell(code)`|execute applescript `tell application "iTunes" ...`
-`itunes.unmute()`|unmute iTunes
-`itunes.helper.tell(code)`|
-`itunes.playlists.names()`|
-`itunes.playlists.play(playlist_name)`|
-`itunes.tracks.play(track, playlist)`|
-`itunes.volume.change(value)`|
-`itunes.volume.get()`|
-
-#### CLI
-usage|`__doc__`
--|-
-`python -m itunes.pause`|
-`python -m itunes.play`|
-`python -m itunes.playing`|print true if iTunes playing
+`itunes.activate()` |open iTunes and make it frontmost
+`itunes.frontmost()` |return True if `iTunes.app` is frontmost app, else False
+`itunes.kill()` |
+`itunes.mute()` |mute iTunes
+`itunes.muted()` |return True if iTunes muted, else False
+`itunes.next()` |play next track
+`itunes.pid()` |return iTunes.app pid
+`itunes.prev()` |play previous track
+`itunes.quit()` |Quit iTunes
+`itunes.state()` |return player state string
+`itunes.stop()` |stop
+`itunes.tell(code)` |execute applescript `tell application "iTunes" ...`
+`itunes.unmute()` |unmute iTunes
+`itunes.helper.tell(code)` |
+`itunes.playlists.names()` |
+`itunes.playlists.play(playlist_name)` |
+`itunes.tracks.play(track, playlist)` |
+`itunes.volume.change(value)` |
+`itunes.volume.get()` |
 
 #### Examples
 `vlc.tell(applescript)` - execute applescript `tell application "VLC" ...`
@@ -90,4 +85,6 @@ process
 >>> itunes.kill()
 ```
 
-<p align="center"><a href="https://pypi.org/project/readme-md/">readme-md</a> - README.md generator</p>
+<p align="center">
+    <a href="https://pypi.org/project/readme-generator/">readme-generator</a>
+</p>
