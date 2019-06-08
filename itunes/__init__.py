@@ -62,9 +62,9 @@ def prev():
 
 
 @public.add
-def playing():
+def isplaying():
     """return True if iTunes is playing, else False"""
-    return "playing" in state()
+    return getpid() and "playing" in state()
 
 
 @public.add
@@ -83,19 +83,19 @@ def activate():
 
 
 @public.add
-def frontmost():
+def isfrontmost():
     """return True if `iTunes.app` is frontmost app, else False"""
     out = os.popen("lsappinfo info -only name `lsappinfo front`").read()
-    return "iTunes" in out.split('"')
+    return getpid() and "iTunes" in out.split('"')
 
 
 @public.add
 def kill():
-    os.popen("kill %s &> /dev/null" % pid())
+    os.popen("kill %s &> /dev/null" % getpid())
 
 
 @public.add
-def pid():
+def getpid():
     """return iTunes.app pid"""
     for l in os.popen("ps -ax").read().splitlines():
         if "/Applications/iTunes.app" in l and "iTunesHelper" not in l:
@@ -105,4 +105,4 @@ def pid():
 @public.add
 def quit():
     """Quit iTunes"""
-    tell("quit")
+    getpid() and tell("quit")

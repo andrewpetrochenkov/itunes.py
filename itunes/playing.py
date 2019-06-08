@@ -3,5 +3,5 @@
 import itunes
 
 if __name__ == "__main__":
-    if itunes.playing():
+    if itunes.isplaying():
         print("true")
