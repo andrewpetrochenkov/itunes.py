@@ -1,40 +1,16 @@
 <!--
-https://pypi.org/project/readme-generator/
-https://pypi.org/project/python-readme-generator/
+https://readme42.com
 -->
 
-[![](https://img.shields.io/badge/OS-MacOS-blue.svg?longCache=True)]()
-[![](https://img.shields.io/pypi/pyversions/itunes.svg?longCache=True)](https://pypi.org/project/itunes/)
-[![](https://img.shields.io/pypi/v/itunes.svg?maxAge=3600)](https://pypi.org/project/itunes/)
-[![Travis](https://api.travis-ci.org/looking-for-a-job/itunes.py.svg?branch=master)](https://travis-ci.org/looking-for-a-job/itunes.py/)
 
-#### Installation
+[![](https://img.shields.io/pypi/v/itunes.svg?maxAge=3600)](https://pypi.org/project/itunes/)
+[![](https://img.shields.io/badge/License-Unlicense-blue.svg?longCache=True)](https://unlicense.org/)
+[![](https://github.com/andrewp-as-is/itunes.py/workflows/tests42/badge.svg)](https://github.com/andrewp-as-is/itunes.py/actions)
+
+### Installation
 ```bash
 $ [sudo] pip install itunes
 ```
-
-#### Functions
-function|`__doc__`
--|-
-`itunes.activate()` |open iTunes and make it frontmost
-`itunes.frontmost()` |return True if `iTunes.app` is frontmost app, else False
-`itunes.kill()` |
-`itunes.mute()` |mute iTunes
-`itunes.muted()` |return True if iTunes muted, else False
-`itunes.next()` |play next track
-`itunes.pid()` |return iTunes.app pid
-`itunes.prev()` |play previous track
-`itunes.quit()` |Quit iTunes
-`itunes.state()` |return player state string
-`itunes.stop()` |stop
-`itunes.tell(code)` |execute applescript `tell application "iTunes" ...`
-`itunes.unmute()` |unmute iTunes
-`itunes.helper.tell(code)` |
-`itunes.playlists.names()` |
-`itunes.playlists.play(playlist_name)` |
-`itunes.tracks.play(track, playlist)` |
-`itunes.volume.change(value)` |
-`itunes.volume.get()` |
 
 #### Examples
 `vlc.tell(applescript)` - execute applescript `tell application "VLC" ...`
@@ -87,5 +63,5 @@ process
 ```
 
 <p align="center">
-    <a href="https://pypi.org/project/python-readme-generator/">python-readme-generator</a>
+    <a href="https://readme42.com/">readme42.com</a>
 </p>
